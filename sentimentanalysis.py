@@ -19,7 +19,7 @@ negativeScore = 0
 for sentence in text:
     overallScore += SIA.polarity_scores(sentence)['compound']
     positiveScore += SIA.polarity_scores(sentence)['positive']
-    negativeScore += SIA.polarity_scores(sentence)['negative']
+    negativeScore -= SIA.polarity_scores(sentence)['negative']
     
 # Print scores
 print("Overall Score", overallScore/len(text))
